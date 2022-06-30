@@ -1,0 +1,10 @@
+"""
+LINE Bot 設定
+"""
+LINE_CHANNEL_SECRET = f"82b4668a68ae458d4d2d9791040dbe06"
+LINE_CHANNEL_ACCESS_TOKEN = f"Pa02iWne8l7RXNCMm0UTzMr0fNZQ34KMuJa6teAQCkAOg1LIsQa+jDm7FiKV4AW5Vdl3cAJ8RR5xQ2gDQGzB1N9MoZ8fdQ1ItHxFWjstb5wXjHpPQ02M4SAOmBMAaajZpvDzGxKAUjTMuiA8Fwzr+AdB04t89/1O/w1cDnyilFU="
+
+# Nas
+mongo_db_url = 'mongodb:27017'
+# mongo_db_url = '172.18.0.4:27017'
+# mongo_db_url = '172.21.80.55:27017'

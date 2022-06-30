@@ -1,0 +1,2 @@
+
+30 9 * * 1-5 /usr/local/bin/python /lunch_linebot/push.py >> /lunch_linebot/log/crontab.log 2>&1

@@ -1,0 +1,17 @@
+version: '3'
+services:
+  lunch_linebot:
+    restart: always
+    build: ./
+    image: lunch_linebot
+    container_name: lunch_linebot
+    ports:
+      - "5006:5006"
+    volumes:  # connect at local file HOST:CONTAINER
+      - ./:/lunch_linebot
+
+# connect network on api-cluster
+networks:
+  default: 
+    external:
+      name: lunch_default

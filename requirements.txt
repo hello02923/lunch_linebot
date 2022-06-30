@@ -1,0 +1,6 @@
+pymongo
+pandas
+line-bot-sdk
+fastapi
+uvicorn
+Jinja2

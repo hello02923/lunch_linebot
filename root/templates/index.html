@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<style>
+    table {
+        width: 70%;
+    }
+    th {
+        background: #EDD382;
+        font-weight: bold;
+        padding: 6px;
+    }
+    td {
+        background: #D9F0FF;
+        padding: 6px;
+    }
+
+</style>
+
+<html>
+    <h3 id="current_date"></h3>
+    <table id="myTable">
+        <tr>
+            <th>姓名</th>
+            <th>餐廳</th>
+            <th>餐點</th>
+        </tr>
+    </table>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        date = new Date();
+        year = date.getFullYear();
+        month = date.getMonth() + 1;
+        day = date.getDate();
+        document.getElementById("current_date").innerHTML = year + "/" + month + "/" + day + " 金科訂單";
+        
+        $.ajax({
+            url: '/lunch/userinfo',
+            type: 'GET',
+            dataType: 'json',
+            contentType: 'application/json;',
+            success: function(data) {
+                for (var i=0; i<data.length; i++) {
+                    var row = $('<tr><td>' + data[i].username+ '</td><td>' + data[i].restaurant + '</td><td>' + data[i].order + '</td></tr>');
+                    $('#myTable').append(row);
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                alert('Error: ' + textStatus + ' - ' + errorThrown);
+            }
+        });
+        </script>
+</html>
